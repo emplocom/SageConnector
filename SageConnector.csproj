@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{275A3844-8351-48E7-85C5-E1018E978CD9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SageConnector</RootNamespace>
+    <AssemblyName>SageConnector</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Forte.Common.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Common.Interfaces\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.ForteVersions, Version=19.0.1.0, Culture=neutral, PublicKeyToken=0caf12c287a8ddfa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.ForteVersions\v4.0_19.0.1.0__0caf12c287a8ddfa\Forte.ForteVersions.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Kadry.Defs, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Kadry.Defs\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Kadry.Defs.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Kadry.KDFAppCOMServer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Kadry.KDFAppCOMServer\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Kadry.KDFAppCOMServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Kadry.KDFAppServices, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Kadry.KDFAppServices\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Kadry.KDFAppServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Kadry.X3, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Kadry.X3\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Kadry.X3.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Kadry.X3.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Kadry.X3.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Kadry.X3.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Modules.KDFAppServicesInstall, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Modules.KDFAppServicesInstall\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Modules.KDFAppServicesInstall.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Modules.Versions, Version=19.0.1.0, Culture=neutral, PublicKeyToken=0caf12c287a8ddfa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Modules.Versions\v4.0_19.0.1.0__0caf12c287a8ddfa\Forte.Modules.Versions.dll</HintPath>
+    </Reference>
+    <Reference Include="Forte.Modules.X3Services, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Modules.X3Services\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Modules.X3Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.3.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.1.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.3.2.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Application.Bootstrapper, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Application.Bootstrapper\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Application.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Application, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Application\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Application.Installer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Application.Installer\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Application.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Clasifications, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Clasifications\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Clasifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Clasifications.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Clasifications.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Clasifications.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Conflicts, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Conflicts\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Conflicts.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Criteria, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Criteria\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Criteria.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Criteria.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Criteria.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Criteria.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.DAL\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.DAL.Validation, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.DAL.Validation\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.DAL.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Defs, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Defs\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Defs.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Dictionaries, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Dictionaries\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Dictionaries.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Dictionaries.DataSuppliers, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Dictionaries.DataSuppliers\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Dictionaries.DataSuppliers.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Dictionaries.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Dictionaries.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Dictionaries.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.DTCDiagnoser, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.DTCDiagnoser\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.DTCDiagnoser.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Essets, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Essets\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Essets.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.ImportExport, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.ImportExport\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.ImportExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Installer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Installer\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Licencing, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Licencing\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Licencing.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Licencing.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Licencing.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Licencing.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.ObjectModel, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.ObjectModel\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.ObjectModel.Installer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.ObjectModel.Installer\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.ObjectModel.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Replication, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Replication\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Replication.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Resources, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Resources\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Services, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Services\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.StructTree, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.StructTree\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.StructTree.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Subjects, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Subjects\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Subjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Subjects.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Subjects.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Subjects.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.UI.Controls, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.UI.Controls\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.UI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.UI.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.UI.DAL\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.UI.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.UI.Platform, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.UI.Platform\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.UI.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.UI.Struct, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.UI.Struct\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.UI.Struct.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.UnitTest.Framework, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.UnitTest.Framework\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.UnitTest.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Users, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Users\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Users.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Users.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Users.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Users.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.Versions, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.Versions\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.Versions.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.WindowsServices, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.WindowsServices\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.WindowsServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Common.WindowsServices.Installer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Common.WindowsServices.Installer\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Common.WindowsServices.Installer.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.HR2CD, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.HR2CD\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.HR2CD.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.About, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.About\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.About.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Administration, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Administration\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Application.WindowsForms, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Application.WindowsForms\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Application.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.CommonData, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.CommonData\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.CommonData.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Company, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Company\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Company.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Conflicts, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Conflicts\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Conflicts.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.DAL\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.DALPlugin.MSSQL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.DALPlugin.MSSQL\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.DALPlugin.MSSQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.DALPlugin.MySQL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.DALPlugin.MySQL\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.DALPlugin.MySQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Hierarchy, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Hierarchy\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Hierarchy.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Login, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Login\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Login.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.ModulesManager, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.ModulesManager\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.ModulesManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Options, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Options\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.PowerToys, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.PowerToys\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.PowerToys.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Subjects, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Subjects\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Subjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Symfonia.Modules.Users, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Symfonia.Modules.Users\v4.0_19.0.1.0__94f0c0fc2739de1f\Symfonia.Modules.Users.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConfigurationTestApiController.cs" />
+    <Compile Include="Controllers\VacationBalanceApiController.cs" />
+    <Compile Include="Controllers\VacationRequestsApiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\ConfigurationTestLogic.cs" />
+    <Compile Include="Logic\EnumerableUtils.cs" />
+    <Compile Include="Logic\SageServiceUtils.cs" />
+    <Compile Include="Logic\SyncVacationDataLogic.cs" />
+    <Compile Include="Logic\VacationWebhookLogic.cs" />
+    <Compile Include="Models\EmploWebhookModels\RequestModels\OperationTypeEnum.cs" />
+    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationCreatedWebhookModel.cs" />
+    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationEditedWebhookModel.cs" />
+    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationStatusChangedWebhookModel.cs" />
+    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationStatusEnum.cs" />
+    <Compile Include="Models\EmploWebhookModels\ResponseModels\CreatedObjectResponseEmploModel.cs" />
+    <Compile Include="Models\EmploWebhookModels\ResponseModels\ErrorMessageResponseEmploModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="emploApiSdk\EmploApiSDK.csproj">
+      <Project>{462582B3-F430-4B0E-8E8A-E11005E05D2E}</Project>
+      <Name>EmploApiSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50740</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50740/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('.\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '.\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '.\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
