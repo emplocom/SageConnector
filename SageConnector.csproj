@@ -393,11 +393,16 @@
     <Compile Include="Controllers\ConfigurationTestApiController.cs" />
     <Compile Include="Controllers\VacationBalanceApiController.cs" />
     <Compile Include="Controllers\VacationRequestsApiController.cs" />
+    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeAttributeMapping.cs" />
+    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeMapping.cs" />
+    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeAttributeMappingSection.cs" />
+    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeImportConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\ConfigurationTestLogic.cs" />
     <Compile Include="Logic\EnumerableUtils.cs" />
+    <Compile Include="Logic\SageIdentifierUtils.cs" />
     <Compile Include="Logic\SageServiceUtils.cs" />
     <Compile Include="Logic\SyncVacationDataLogic.cs" />
     <Compile Include="Logic\VacationWebhookLogic.cs" />

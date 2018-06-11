@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using SageConnector.Logic;
 using SageConnector.Models.EmploWebhookModels.RequestModels;
 using SageConnector.Models.EmploWebhookModels.ResponseModels;
+using Symfonia.Common.Defs;
 
 namespace SageConnector.Controllers
 {
@@ -25,7 +26,7 @@ namespace SageConnector.Controllers
             _logger = LoggerFactory.CreateLogger(null);
 
             _syncVacationDataLogic = new SyncVacationDataLogic(_logger);
-            _vacationWebhookLogic = new VacationWebhookLogic(_logger);
+            _vacationWebhookLogic = new VacationWebhookLogic(_logger, _syncVacationDataLogic);
             
         }
 
@@ -39,8 +40,24 @@ namespace SageConnector.Controllers
 
             try
             {
-                var response =
-                    new HttpResponseMessage(HttpStatusCode.OK);
+                string newAbsenceIdentifier;
+                var result = _vacationWebhookLogic.SendVacationCreatedRequest(model, out newAbsenceIdentifier);
+                HttpResponseMessage response;
+
+                if (result.Success)
+                {
+                    response = new HttpResponseMessage(HttpStatusCode.Created)
+                    {
+                        Content = new StringContent(
+                            JsonConvert.SerializeObject(
+                                new CreatedObjectResponseEmploModel() { CreatedObjectIdentifier = newAbsenceIdentifier }),
+                            Encoding.UTF8, "application/json")
+                    };
+                }
+                else
+                {
+                    response = BuildErrorResponseFromIResult(result);
+                }
 
                 _logger.WriteLine($"Webhook VacationCreated response: {JsonConvert.SerializeObject(response)}");
                 return response;
@@ -61,8 +78,19 @@ namespace SageConnector.Controllers
 
             try
             {
-                var response =
-                    new HttpResponseMessage(HttpStatusCode.OK);
+                var result = _vacationWebhookLogic.SendVacationEditedRequest(model);
+                HttpResponseMessage response;
+
+                if (result.Success)
+                {
+                    response =
+                        new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    response = BuildErrorResponseFromIResult(result);
+                    
+                }
 
                 _logger.WriteLine($"Webhook VacationUpdated response: {JsonConvert.SerializeObject(response)}");
                 return response;
@@ -83,8 +111,19 @@ namespace SageConnector.Controllers
 
             try
             {
-                var response =
-                    new HttpResponseMessage(HttpStatusCode.OK);
+                var result = _vacationWebhookLogic.SendVacationStatusChangedRequest(model);
+                HttpResponseMessage response;
+
+                if (result.Success)
+                {
+                    response =
+                        new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                else
+                {
+                    response = BuildErrorResponseFromIResult(result);
+
+                }
 
                 _logger.WriteLine($"Webhook VacationStatusChanged response: {JsonConvert.SerializeObject(response)}");
                 return response;
@@ -107,6 +146,20 @@ namespace SageConnector.Controllers
             };
 
             _logger.WriteLine($"Status check result: ERROR, response: {JsonConvert.SerializeObject(response)}", LogLevelEnum.Error);
+            return response;
+        }
+
+        [NonAction]
+        private HttpResponseMessage BuildErrorResponseFromIResult(IResult result)
+        {
+            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+            {
+                Content = new StringContent(
+                    JsonConvert.SerializeObject(
+                        new ErrorMessageResponseEmploModel() { ErrorMessage = result.ToString() }), Encoding.UTF8,
+                    "application/json")
+            };
+
             return response;
         }
     }
