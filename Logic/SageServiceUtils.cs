@@ -39,23 +39,29 @@ namespace SageConnector.Logic
             finally
             {
                 _logger.WriteLine(res.ToString());
-                //HandleResult(res);
             }
         }
 
-        //private void HandleResult(IResult res)
-        //{
-        //    if (res.Error)
-        //    {
-        //        if (FCommonServer.CurrentSessionOpened)
-        //            _logger.WriteLine(res.ToString(), LogLevelEnum.Error);
-        //    }
-        //    else
-        //    {
-        //        _logger.WriteLine(res.ToString());
-        //    }
-        //}
+        public void ExitInstance()
+        {
+            CResult res = CResult.New("EnterInstance");
 
+            try
+            {
+
+                SCTUtility.Verify(FKDFAppServices.ExitInstance());
+                FTemporaryOnlineLicencing.Settings.Online = bool.Parse(ConfigurationManager.AppSettings["TemporaryOnlineLicencing"]);
+            }
+            catch (Exception ex)
+            {
+                res.Add(ex);
+                _logger.WriteLine(res.ToString(), LogLevelEnum.Error);
+            }
+            finally
+            {
+                _logger.WriteLine(res.ToString());
+            }
+        }
 
         public IResult OpenFirmAndLogOnUser()
         {

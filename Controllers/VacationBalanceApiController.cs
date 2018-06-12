@@ -25,15 +25,15 @@ namespace SageConnector.Controllers
         /// Should be run periodically by a scheduler.
         /// </summary>
         [HttpGet]
-        public async Task<HttpResponseMessage> SynchronizeVacationDays([FromUri] string listOfIds = "")
+        public HttpResponseMessage SynchronizeVacationDays([FromUri] string listOfIds = "")
         {
             if (listOfIds.IsEmpty())
             {
-                await _sageSyncVacationDataLogic.SyncVacationData();
+                _sageSyncVacationDataLogic.SyncVacationData();
             }
             else
             {
-                await _sageSyncVacationDataLogic.SyncVacationData(listOfIds.Split(',').ToList());
+                _sageSyncVacationDataLogic.SyncVacationData(listOfIds.Split(',').ToList());
             }
 
             return new HttpResponseMessage(HttpStatusCode.OK);

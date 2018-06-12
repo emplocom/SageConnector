@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.WebPages;
 using EmploApiSDK.ApiModels.IntegratedVacations;
 using EmploApiSDK.Client;
@@ -36,20 +35,26 @@ namespace SageConnector.Logic
             _apiClient = new ApiClient(_logger, _apiConfiguration);
             _vacationTypeImportConfiguration = new VacationTypeImportConfiguration(logger);
         }
-
-        public async Task SyncVacationData(List<string> employeeIdentifiers = null)
+        
+        public void SyncVacationData(List<string> employeeIdentifiers = null)
         {
             List<IKDFEmployee> employeeList = new List<IKDFEmployee>();
 
             if (employeeIdentifiers == null || !employeeIdentifiers.Any())
             {
                 //TODO: which statuses should be ignored?
+                _logger.WriteLine("Starting vacation balance synchronization for all employees...");
                 var employeeResult = FKDFEmployees.GetKDFEmployees(out employeeList, EEmployeeType.cooperate, EEmployeeType.employee, EEmployeeType.civilian, EEmployeeType.planned, EEmployeeType.undefined);
 
-                if (!employeeResult.Success) return;
+                if (!employeeResult.Success)
+                {
+                    _logger.WriteLine($"An error occurred while fetching the employee list, message: {employeeResult.ToString()}");
+                    return;
+                }   
             }
             else
             {
+                _logger.WriteLine($"Starting vacation balance synchronization for employees with ids: {string.Join(",", employeeIdentifiers)}");
                 foreach (var employeeId in employeeIdentifiers)
                 {
                     IKDFEmployee employee;
@@ -59,32 +64,40 @@ namespace SageConnector.Logic
                     {
                         employeeList.Add(employee);
                     }
+                    else
+                    {
+                        _logger.WriteLine($"An error occurred while getting employee with Id {employeeId}, synchronization will be skipped for this user! Error message: {result.ToString()}", LogLevelEnum.Warning);
+                    }
                 }
             }
 
             Dictionary<IKDFEmployee, List<IBalanceEmployee>> employeeBalancesCollections;
             var balanceResult = FKDFAbsences.GetAbsenceBalancesForEmployees(out employeeBalancesCollections, employeeList, null);
 
-            if (!balanceResult.Success) return;
+            if (!balanceResult.Success)
+            {
+                _logger.WriteLine($"An error occurred while fetching absence balances for employees, message: {balanceResult.ToString()}");
+                return;
+            }
 
-            await ImportEmployeeBalancesCollections(employeeBalancesCollections);
+            ImportEmployeeBalancesCollections(employeeBalancesCollections);
         }
-
-        public async Task SyncVacationDataForEmployeeFromBalance(List<IBalanceEmployee> employeeBalances)
+        
+        public void SyncVacationDataForEmployeeFromBalance(IKDFEmployee employee, List<IBalanceEmployee> employeeBalances)
         {
             if (employeeBalances.Any())
             {
                 var employeeBalanceDataAsDict = new Dictionary<IKDFEmployee, List<IBalanceEmployee>>();
-                employeeBalanceDataAsDict.Add(employeeBalances.First().Employee, employeeBalances);
-                await ImportEmployeeBalancesCollections(employeeBalanceDataAsDict);
+                employeeBalanceDataAsDict.Add(employee, employeeBalances);
+                ImportEmployeeBalancesCollections(employeeBalanceDataAsDict);
             }
             else
             {
-                //TODO: log error - balances collection was empty
+                _logger.WriteLine($"Balances collection for employee {employee.Identifier.GetExternalIdForEmplo()} was empty!", LogLevelEnum.Error);
             }
         }
-
-        private async Task ImportEmployeeBalancesCollections(
+        
+        private void ImportEmployeeBalancesCollections(
             Dictionary<IKDFEmployee, List<IBalanceEmployee>> employeeBalancesCollections)
         {
             List<IntegratedVacationsBalanceDto> allVacationBalancesToImport = new List<IntegratedVacationsBalanceDto>();
@@ -98,7 +111,7 @@ namespace SageConnector.Logic
 
                     if (vacationTypeBalance == null)
                     {
-                        //TODO: log
+                        _logger.WriteLine($"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find vacationTypeBalance for mapping {vacationTypeMapping.VacationType}, skipping synchronization for this type", LogLevelEnum.Warning);
                         continue;
                     }
 
@@ -115,7 +128,7 @@ namespace SageConnector.Logic
 
                         if (onDemandTypeBalance == null)
                         {
-                            //TODO: log
+                            _logger.WriteLine($"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find onDemandTypeBalance for mapping {vacationTypeMapping.OnDemandType}, skipping synchronization for it and it's base type ({vacationTypeMapping.VacationType})", LogLevelEnum.Warning);
                             continue;
                         }
 
@@ -128,9 +141,9 @@ namespace SageConnector.Logic
 
             if (allVacationBalancesToImport.Any())
             {
-                await allVacationBalancesToImport.Chunk(10).ToList().ForEachAsync(
+                Task.Run(() => allVacationBalancesToImport.Chunk(10).ToList().ForEachAsync(
                     async dataChunk => await Import(dataChunk.ToList())
-                );
+                ));
             }
         }
 

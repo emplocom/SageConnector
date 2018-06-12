@@ -60,6 +60,7 @@ namespace SageConnector
         protected void Application_End()
         {
             _utils.LogOffUserAndCloseFirm();
+            _utils.ExitInstance();
         }
     }
 }

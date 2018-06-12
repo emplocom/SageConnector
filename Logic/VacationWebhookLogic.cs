@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using EmploApiSDK.Logger;
 using Forte.Common.Interfaces;
 using Forte.Kadry.KDFAppServices;
 using SageConnector.Models.EmploWebhookModels.RequestModels;
 using Symfonia.Common.Defs;
-using Symfonia.Common.UnitTest.Framework;
 
 namespace SageConnector.Logic
 {
@@ -28,25 +26,36 @@ namespace SageConnector.Logic
             newAbsenceIdentifier = string.Empty;
             IKDFEmployee employee;
             var getEmployeeResult = FKDFEmployees.GetKDFEmployee(new CIdentifier(emploRequest.ExternalEmployeeId), out employee);
+            _logger.WriteLine($"GetKDFEmployee result: {getEmployeeResult.ToString()}", getEmployeeResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             if (!getEmployeeResult.Success) return getEmployeeResult;
+
 
             List<IEventType> eventTypes;
             var getEventTypesResult = FKDFAbsences.GetEventTypesValidForAbsenceUse(out eventTypes, employee);
+            _logger.WriteLine($"GetEventTypesValidForAbsenceUse result: {getEventTypesResult.ToString()}", getEventTypesResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             if (!getEventTypesResult.Success) return getEventTypesResult;
+            
 
             IEventType eventType = eventTypes.FirstOrDefault(et =>
-                et.BalanceType.Identifier.IntId == int.Parse(emploRequest.ExternalVacationTypeId));
+                et.BalanceType.Identifier.GetExternalIdForEmplo().Equals(emploRequest.ExternalVacationTypeId));
+            if (eventType == null) throw new Exception($"Could not find event type with Id {emploRequest.ExternalVacationTypeId} for employee {emploRequest.ExternalVacationTypeId}");
+
 
             IAbsence createdAbsence;
             List<IBalanceEmployee> balancesForSync;
-            var insertAbsenceResult = FKDFAbsences.InsertEmployeeAbsence(new Guid(), out createdAbsence, employee, eventType, EAbsenceStatus.toAccept, emploRequest.Since,
+            var guid = new Guid();
+            _logger.WriteLine($"Calling InsertEmployeeAbsence with parameters: guid = {guid}, employee (id) = {employee.Identifier.ToString()}, eventType (id) = {eventType.Identifier.ToString()}, newStatus = {MapVacationStatus(emploRequest.Status)}, beginDate = {emploRequest.Since}, endDate = {emploRequest.Until}");
+            var insertAbsenceResult = FKDFAbsences.InsertEmployeeAbsence(guid, out createdAbsence, employee, eventType, MapVacationStatus(emploRequest.Status), emploRequest.Since,
                 emploRequest.Until, out balancesForSync);
+            _logger.WriteLine($"InsertEmployeeAbsence result: {insertAbsenceResult.ToString()}", insertAbsenceResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             if (!insertAbsenceResult.Success) return insertAbsenceResult;
+
 
             newAbsenceIdentifier = createdAbsence.Identifier.GetExternalIdForEmplo();
 
             if(emploRequest.HasManagedVacationDaysBalance)
-                Task.Run(() => _syncVacationDataLogic.SyncVacationDataForEmployeeFromBalance(balancesForSync));
+                _syncVacationDataLogic.SyncVacationDataForEmployeeFromBalance(employee, balancesForSync);
+
             return insertAbsenceResult;
         }
 
@@ -57,25 +66,56 @@ namespace SageConnector.Logic
 
         public IResult SendVacationStatusChangedRequest(VacationStatusChangedWebhookModel emploRequest)
         {
+            IAbsence inputAbsence;
+            var getAbsenceResult = FKDFAbsences.GetAbsence(out inputAbsence, new CIdentifier(emploRequest.ExternalVacationId));
+            _logger.WriteLine($"GetAbsence result: {getAbsenceResult.ToString()}", getAbsenceResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
+            if (!getAbsenceResult.Success) return getAbsenceResult;
+
+
             IResult changeAbsenceStateResult;
             List<IBalanceEmployee> balancesForSync;
-            IAbsence inputAbsence;
-            FKDFAbsences.GetAbsence(out inputAbsence, new CIdentifier(emploRequest.ExternalVacationId));
-
-            if (new List<VacationStatusEnum>(){VacationStatusEnum.Canceled, VacationStatusEnum.Rejected, VacationStatusEnum.Removed}.Contains(emploRequest.NewStatus))
+            if (emploRequest.NewStatus == VacationStatusEnum.Removed)
             {
                 changeAbsenceStateResult =
                     FKDFAbsences.RemoveEmployeeAbsence(inputAbsence, out balancesForSync, DateTime.MinValue);
+                _logger.WriteLine($"RemoveEmployeeAbsence result: {changeAbsenceStateResult.ToString()}", changeAbsenceStateResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             }
             else
             {
                 IAbsence outputAbsence;
-                changeAbsenceStateResult = FKDFAbsences.ChangeAbsenceState(out outputAbsence, inputAbsence, EAbsenceStatus.toAccept, out balancesForSync);
+                changeAbsenceStateResult = FKDFAbsences.ChangeAbsenceState(out outputAbsence, inputAbsence, MapVacationStatus(emploRequest.NewStatus), out balancesForSync);
+                _logger.WriteLine($"ChangeAbsenceState result: {changeAbsenceStateResult.ToString()}", changeAbsenceStateResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             }
-            
+
+            if (!changeAbsenceStateResult.Success) return changeAbsenceStateResult;
+
+
             if (emploRequest.HasManagedVacationDaysBalance)
-                Task.Run(() => _syncVacationDataLogic.SyncVacationDataForEmployeeFromBalance(balancesForSync));
+                Task.Run(() => _syncVacationDataLogic.SyncVacationDataForEmployeeFromBalance(inputAbsence.Employee, balancesForSync));
             return changeAbsenceStateResult;
+        }
+
+        private EAbsenceStatus MapVacationStatus(VacationStatusEnum emploVacationStatus)
+        {
+            switch (emploVacationStatus)
+            {
+                case VacationStatusEnum.Accepted:
+                    return EAbsenceStatus.accepted;
+                case VacationStatusEnum.Canceled:
+                    return EAbsenceStatus.cancelled;
+                case VacationStatusEnum.Executed:
+                    return EAbsenceStatus.closed;
+                case VacationStatusEnum.ForApproval:
+                    return EAbsenceStatus.toAccept;
+                case VacationStatusEnum.ForWithdrawal:
+                    return EAbsenceStatus.toCancel;
+                case VacationStatusEnum.Rejected:
+                    return EAbsenceStatus.rejected;
+                case VacationStatusEnum.Removed:
+                    throw new Exception("This status should have been handled by separate removal logic!");
+                default:
+                    throw new Exception($"Unknown status: {emploVacationStatus.ToString()}");
+            }
         }
     }
 }
