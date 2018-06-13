@@ -27,8 +27,7 @@ namespace SageConnector.Logic
 
             try
             {
-
-                SCTUtility.Verify(FKDFAppServices.EnterInstance("Nieobecności", "Absence", "Absence_V1", true, true));
+                SCTUtility.Verify(FKDFAppServices.EnterInstance("MZZ Nieobecności", "Absence", "Absence_V1", true, true));
                 FTemporaryOnlineLicencing.Settings.Online = bool.Parse(ConfigurationManager.AppSettings["TemporaryOnlineLicencing"]);
             }
             catch (Exception ex)
@@ -44,13 +43,11 @@ namespace SageConnector.Logic
 
         public void ExitInstance()
         {
-            CResult res = CResult.New("EnterInstance");
+            CResult res = CResult.New("ExitInstance");
 
             try
             {
-
                 SCTUtility.Verify(FKDFAppServices.ExitInstance());
-                FTemporaryOnlineLicencing.Settings.Online = bool.Parse(ConfigurationManager.AppSettings["TemporaryOnlineLicencing"]);
             }
             catch (Exception ex)
             {

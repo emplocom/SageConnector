@@ -83,20 +83,6 @@ namespace SageConnector.Logic
             ImportEmployeeBalancesCollections(employeeBalancesCollections);
         }
         
-        public void SyncVacationDataForEmployeeFromBalance(IKDFEmployee employee, List<IBalanceEmployee> employeeBalances)
-        {
-            if (employeeBalances.Any())
-            {
-                var employeeBalanceDataAsDict = new Dictionary<IKDFEmployee, List<IBalanceEmployee>>();
-                employeeBalanceDataAsDict.Add(employee, employeeBalances);
-                ImportEmployeeBalancesCollections(employeeBalanceDataAsDict);
-            }
-            else
-            {
-                _logger.WriteLine($"Balances collection for employee {employee.Identifier.GetExternalIdForEmplo()} was empty!", LogLevelEnum.Error);
-            }
-        }
-        
         private void ImportEmployeeBalancesCollections(
             Dictionary<IKDFEmployee, List<IBalanceEmployee>> employeeBalancesCollections)
         {
