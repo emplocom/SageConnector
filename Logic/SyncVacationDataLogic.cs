@@ -4,13 +4,14 @@ using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.WebPages;
-using EmploApiSDK.ApiModels.IntegratedVacations;
+using EmploApiSDK.ApiModels.Vacations.IntegratedVacationBalances;
 using EmploApiSDK.Client;
 using EmploApiSDK.Logger;
 using Forte.Common.Interfaces;
+using Forte.Kadry.KDFAppCOMServer;
 using Forte.Kadry.KDFAppServices;
 using Newtonsoft.Json;
-using SageConnector.ImportableVacationTypesConfiguration;
+using SageConnector.IntegratedVacationTypesConfiguration;
 using Symfonia.Common.Defs;
 
 namespace SageConnector.Logic
@@ -48,7 +49,7 @@ namespace SageConnector.Logic
 
                 if (!employeeResult.Success)
                 {
-                    _logger.WriteLine($"An error occurred while fetching the employee list, message: {employeeResult.ToString()}");
+                    _logger.WriteLine($"An error occurred while fetching the employee list, message: {employeeResult.ToString()}", LogLevelEnum.Error);
                     return;
                 }   
             }
@@ -66,7 +67,7 @@ namespace SageConnector.Logic
                     }
                     else
                     {
-                        _logger.WriteLine($"An error occurred while getting employee with Id {employeeId}, synchronization will be skipped for this user! Error message: {result.ToString()}", LogLevelEnum.Warning);
+                        _logger.WriteLine($"An error occurred while getting employee with Id {employeeId}, synchronization will be skipped for this user! Error message: {result.ToString()}", LogLevelEnum.Error);
                     }
                 }
             }
@@ -76,7 +77,7 @@ namespace SageConnector.Logic
 
             if (!balanceResult.Success)
             {
-                _logger.WriteLine($"An error occurred while fetching absence balances for employees, message: {balanceResult.ToString()}");
+                _logger.WriteLine($"An error occurred while fetching absence balances for employees, message: {balanceResult.ToString()}", LogLevelEnum.Error);
                 return;
             }
 
@@ -97,13 +98,17 @@ namespace SageConnector.Logic
 
                     if (vacationTypeBalance == null)
                     {
-                        _logger.WriteLine($"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find vacationTypeBalance for mapping {vacationTypeMapping.VacationType}, skipping synchronization for this type", LogLevelEnum.Warning);
+                        _logger.WriteLine(
+                            $"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find vacationTypeBalance for mapping {vacationTypeMapping.VacationType}, skipping synchronization for this type",
+                            LogLevelEnum.Error);
                         continue;
                     }
 
                     var vacationBalanceDto = new IntegratedVacationsBalanceDto();
-                    vacationBalanceDto.ExternalEmployeeId = vacationTypeBalance.Employee.Identifier.GetExternalIdForEmplo();
-                    vacationBalanceDto.ExternalVacationTypeId = vacationTypeBalance.Type.Identifier.GetExternalIdForEmplo();
+                    vacationBalanceDto.ExternalEmployeeId =
+                        vacationTypeBalance.Employee.Identifier.GetExternalIdForEmplo();
+                    vacationBalanceDto.ExternalVacationTypeId =
+                        vacationTypeBalance.Type.Identifier.GetExternalIdForEmplo();
                     vacationBalanceDto.AvailableDays = Convert.ToDecimal(vacationTypeBalance.CurrentSize);
                     vacationBalanceDto.OutstandingDays = Convert.ToDecimal(vacationTypeBalance.BehindDimension);
 
@@ -114,7 +119,9 @@ namespace SageConnector.Logic
 
                         if (onDemandTypeBalance == null)
                         {
-                            _logger.WriteLine($"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find onDemandTypeBalance for mapping {vacationTypeMapping.OnDemandType}, skipping synchronization for it and it's base type ({vacationTypeMapping.VacationType})", LogLevelEnum.Warning);
+                            _logger.WriteLine(
+                                $"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find onDemandTypeBalance for mapping {vacationTypeMapping.OnDemandType}, skipping synchronization for it and it's base type ({vacationTypeMapping.VacationType})",
+                                LogLevelEnum.Error);
                             continue;
                         }
 

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.RequestModels;
 using EmploApiSDK.Logger;
 using Forte.Common.Interfaces;
-using Forte.Kadry.KDFAppCOMServer;
 using Forte.Kadry.KDFAppServices;
-using SageConnector.Models.EmploWebhookModels.RequestModels;
 using Symfonia.Common.Defs;
 
 namespace SageConnector.Logic
@@ -50,14 +48,13 @@ namespace SageConnector.Logic
 
 
             IAbsence createdAbsence;
-            List<IBalanceEmployee> balancesForSync;
             var guid = Guid.NewGuid();
             _logger.WriteLine(
                 $"Calling InsertEmployeeAbsence with parameters: guid = {guid}, employee (id) = {employee.Identifier.ToString()}, eventType (id) = {eventType.Identifier.ToString()}, newStatus = {MapVacationStatus(emploRequest.Status)}, beginDate = {emploRequest.Since}, endDate = {emploRequest.Until}");
 
             var insertAbsenceResult = FKDFAbsences.InsertEmployeeAbsence(guid, out createdAbsence, employee, eventType,
                 MapVacationStatus(emploRequest.Status), emploRequest.Since,
-                emploRequest.Until, out balancesForSync);
+                emploRequest.Until);
             _logger.WriteLine($"InsertEmployeeAbsence result: {insertAbsenceResult.ToString()}",
                 insertAbsenceResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             if (!insertAbsenceResult.Success) return insertAbsenceResult;
@@ -88,21 +85,16 @@ namespace SageConnector.Logic
 
 
             IResult changeAbsenceStateResult;
-            List<IBalanceEmployee> balancesForSync;
             if (emploRequest.NewStatus == VacationStatusEnum.Removed)
             {
                 changeAbsenceStateResult =
-                    FKDFAbsences.RemoveEmployeeAbsence(inputAbsence, out balancesForSync, DateTime.MinValue);
-                _logger.WriteLine($"RemoveEmployeeAbsence result: {changeAbsenceStateResult.ToString()}",
-                    changeAbsenceStateResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
+                    FKDFAbsences.RemoveEmployeeAbsence(inputAbsence);
             }
             else
             {
                 IAbsence outputAbsence;
                 changeAbsenceStateResult = FKDFAbsences.ChangeAbsenceState(out outputAbsence, inputAbsence,
-                    MapVacationStatus(emploRequest.NewStatus), out balancesForSync);
-                _logger.WriteLine($"ChangeAbsenceState result: {changeAbsenceStateResult.ToString()}",
-                    changeAbsenceStateResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
+                    MapVacationStatus(emploRequest.NewStatus));
             }
 
             if (!changeAbsenceStateResult.Success) return changeAbsenceStateResult;

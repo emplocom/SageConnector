@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using EmploApiSDK.Logger;
-using Forte.Kadry.KDFAppServices;
 using SageConnector.Logic;
 
 namespace SageConnector.Controllers

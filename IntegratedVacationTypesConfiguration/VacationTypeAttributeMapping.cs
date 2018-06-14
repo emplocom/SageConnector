@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace SageConnector.ImportableVacationTypesConfiguration
+namespace SageConnector.IntegratedVacationTypesConfiguration
 {
     public class VacationTypeAttributeMapping : ConfigurationElementCollection
     {

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Net.Mime;
-using System.Threading;
-using System.Web;
 using EmploApiSDK.Logger;
 using Forte.Kadry.KDFAppServices;
 using Symfonia.Common.Application;

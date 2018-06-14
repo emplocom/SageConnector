@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using EmploApiSDK.Client;
 using EmploApiSDK.Logger;
 using Forte.Kadry.KDFAppServices;

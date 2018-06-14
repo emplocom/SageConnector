@@ -3,11 +3,11 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.RequestModels;
+using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.ResponseModels;
 using EmploApiSDK.Logger;
 using Newtonsoft.Json;
 using SageConnector.Logic;
-using SageConnector.Models.EmploWebhookModels.RequestModels;
-using SageConnector.Models.EmploWebhookModels.ResponseModels;
 using Symfonia.Common.Defs;
 
 namespace SageConnector.Controllers
@@ -125,7 +125,7 @@ namespace SageConnector.Controllers
 
                 }
 
-                _logger.WriteLine($"Webhook VacationStatusChanged response: {JsonConvert.SerializeObject(response)}");
+                _logger.WriteLine($"Webhook VacationStatusChanged response: {JsonConvert.SerializeObject(response)}", result.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
                 return response;
             }
             catch (Exception e)

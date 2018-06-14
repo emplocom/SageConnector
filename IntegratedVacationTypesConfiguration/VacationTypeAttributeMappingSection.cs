@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using EmploApiSDK.Logic.EmployeeImport;
 
-namespace SageConnector.ImportableVacationTypesConfiguration
+namespace SageConnector.IntegratedVacationTypesConfiguration
 {
     public class VacationTypeAttributeMappingSection : ConfigurationSection
     {

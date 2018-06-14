@@ -86,6 +86,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Forte.Modules.X3Services\v4.0_19.0.1.0__94f0c0fc2739de1f\Forte.Modules.X3Services.dll</HintPath>
     </Reference>
+    <Reference Include="Interop.mxKD, Version=1.5.0.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Interop.mxKD\v4.0_1.5.0.0__94f0c0fc2739de1f\Interop.mxKD.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NetFwTypeLib, Version=13.10.0.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Interop.NetFwTypeLib\v4.0_13.10.0.0__94f0c0fc2739de1f\Interop.NetFwTypeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="interop.SymDM, Version=15.1.0.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Interop.SymDM\v4.0_15.1.0.0__94f0c0fc2739de1f\interop.SymDM.dll</HintPath>
+    </Reference>
+    <Reference Include="interop.symfoniapdf, Version=13.10.0.0, Culture=neutral, PublicKeyToken=86438ec8b813d4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Interop.SymfoniaPDF\v4.0_13.10.0.0__86438ec8b813d4d6\interop.symfoniapdf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -96,6 +116,554 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.About.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.About.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.About.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.About.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.About.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.About.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Administration.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Administration.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Administration.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Administration.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Administration.BusinessLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Administration.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Administration.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Administration.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Administration.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Administration.SQL.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Administration.SQL.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Administration.SQL.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Administration.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Administration.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Administration.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Anonymization.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Anonymization.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Anonymization.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Anonymization.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Anonymization.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Anonymization.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Anonymization.SQL.Infrastructure, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Anonymization.SQL.Infrastructure\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Anonymization.SQL.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Anonymization.SQL.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Anonymization.SQL.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Anonymization.SQL.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Anonymization.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Anonymization.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Anonymization.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.App.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.App.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.App.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.App.Shell.FK.Import, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.App.Shell.FK.Import\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.App.Shell.FK.Import.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Application.Install, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Application.Install\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Application.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.CMNLibs.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.CMNLibs.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.CMNLibs.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.CMNLibs.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.CMNLibs.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.CMNLibs.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Application, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Application\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Controls, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Controls\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Licences.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Licences.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Licences.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Secure, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Secure\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Secure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Styles.Generic, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Styles.Generic\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Styles.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Tools, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Tools\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Users.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Users.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Users.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Common.Wpf, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Common.Wpf\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Company.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Company.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Company.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Company.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Company.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Company.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Company.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Company.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Company.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Database.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Database.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Database.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Database.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Database.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Database.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Database.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Database.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Database.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.DevExpress.Skin.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.DevExpress.Skin.v15.2\v4.0_15.2.9.0__95fc6c5621878f0a\Sage.PL.DevExpress.Skin.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.ElectronicTaxDeclarations.Sender.XmlSerializers, Version=19.0.1.0, Culture=neutral, PublicKeyToken=bbadc43bf63c002b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.ElectronicTaxDeclarations.Sender.XmlSerializers\v4.0_19.0.1.0__bbadc43bf63c002b\Sage.PL.ElectronicTaxDeclarations.Sender.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Common.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Common.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Common.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Company.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Company.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Company.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Company.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Company.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Company.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Database.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Database.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Database.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Database.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Database.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Database.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Dictionaries.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Dictionaries.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Dictionaries.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Dictionaries.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Dictionaries.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Dictionaries.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Dictionaries.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Dictionaries.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Dictionaries.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Licences.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Licences.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Licences.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.LicenceUse.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.LicenceUse.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.LicenceUse.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.LicenceUse.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.LicenceUse.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.LicenceUse.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Licencing.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Licencing.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Licencing.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Users.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Users.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Users.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Users.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Users.DAL\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Users.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.Users.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.Users.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.Users.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Forte.UsersExtended.SQL.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Forte.UsersExtended.SQL.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Forte.UsersExtended.SQL.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Functionality, Version=19.0.1.0, Culture=neutral, PublicKeyToken=f0c147481b82c561, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Functionality\v4.0_19.0.1.0__f0c147481b82c561\Sage.PL.Functionality.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Internal.Tools, Version=17.0.1.0, Culture=neutral, PublicKeyToken=01b27b895ca80339, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Internal.Tools\v4.0_17.0.1.0__01b27b895ca80339\Sage.PL.Internal.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.JoinedCompany.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.JoinedCompany.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.JoinedCompany.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.JoinedCompany.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.JoinedCompany.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.JoinedCompany.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Licences.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Licences.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Licences.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Licences.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Licences.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Licences.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LicenceUse.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LicenceUse.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LicenceUse.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LicenceUse.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LicenceUse.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LicenceUse.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LockService.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LockService.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LockService.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LockService.Infrastructure, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LockService.Infrastructure\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LockService.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LockService.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LockService.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LockService.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.LockService.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.LockService.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.LockService.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.MFCApplication.DIContainer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.MFCApplication.DIContainer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.MFCApplication.DIContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.MFCApplication.ShellNavigator, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.MFCApplication.ShellNavigator\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.MFCApplication.ShellNavigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Navigation.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Navigation.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Navigation.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Navigation.Services, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Navigation.Services\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Navigation.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Navigation.WPF.Controls, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Navigation.WPF.Controls\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Navigation.WPF.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Navigation.WPF.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Navigation.WPF.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Navigation.WPF.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.ApplicationLayer, Version=19.0.2.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.ApplicationLayer\v4.0_19.0.2.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.BaseModule, Version=19.0.2.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.BaseModule\v4.0_19.0.2.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.BaseModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.Infrastructure, Version=19.0.2.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.Infrastructure\v4.0_19.0.2.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.Interfaces, Version=19.0.2.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.Interfaces\v4.0_19.0.2.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.SQL.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.SQL.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.SQL.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.SQL.Infrastructure, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.SQL.Infrastructure\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.SQL.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.SQL.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.SQL.Module\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.SQL.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.OnlineLicencing.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.OnlineLicencing.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.OnlineLicencing.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Absences, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Absences\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Payroll.Absences.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Absences.Definitions, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Absences.Definitions\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Payroll.Absences.Definitions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Absences.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Absences.UI\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Payroll.Absences.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Application, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Application\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.DAL\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.GUS.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.GUS.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.GUS.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.GUS.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.GUS.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.GUS.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.GUS.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.GUS.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.GUS.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.GUS.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.GUS.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.GUS.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.GUS.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.GUS.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.GUS.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Notifications.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Notifications.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Notifications.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Notifications.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Notifications.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Notifications.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Notifications.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Notifications.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Notifications.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PayerZus.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PayerZus.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PayerZus.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PayerZus.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PayerZus.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PayerZus.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PayerZus.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PayerZus.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PayerZus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PayerZus.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PayerZus.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PayerZus.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PayerZus.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PayerZus.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PayerZus.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.DAL\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.LocalDatabase, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.LocalDatabase\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.LocalDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.UI, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.UI\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PersonalFiles.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PersonalFiles.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PersonalFiles.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.PIT.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.PIT.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.PIT.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.DAL, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.DAL\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reminders.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reminders.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Reminders.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reports.Defs, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reports.Defs\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Payroll.Reports.Defs.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Reports.Services, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Reports.Services\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Payroll.Reports.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.Style, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.Style\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.Style.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Payroll.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Payroll.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.Payroll.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.PIT.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.PIT.ApplicationLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.PIT.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.PIT.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.PIT.BusinessLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.PIT.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.PIT.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.PIT.Interfaces\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.PIT.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.PIT.Module, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.PIT.Module\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.PIT.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.PIT.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.PIT.ViewLayer\v4.0_19.0.1.0__3342f0000400c525\Sage.PL.PIT.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Puchatek.AppClient, Version=16.50.8.0, Culture=neutral, PublicKeyToken=b4be2dc90a175a41, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Puchatek.AppClient\v4.0_16.50.8.0__b4be2dc90a175a41\Sage.PL.Puchatek.AppClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Puchatek.Core, Version=16.50.8.0, Culture=neutral, PublicKeyToken=e5015e5e184a2ffa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Puchatek.Core\v4.0_16.50.8.0__e5015e5e184a2ffa\Sage.PL.Puchatek.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Reports, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Reports\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Reports.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=94f0c0fc2739de1f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Reports.Interfaces\v4.0_19.0.1.0__94f0c0fc2739de1f\Sage.PL.Reports.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.SplashAndLogin.Controls, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.SplashAndLogin.Controls\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.SplashAndLogin.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Symfonia.Online.Services.Client, Version=18.0.1.0, Culture=neutral, PublicKeyToken=d9f75f50f49dea90, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Symfonia.Online.Services.Client\v4.0_18.0.1.0__d9f75f50f49dea90\Sage.PL.Symfonia.Online.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.SymfoniaDataCollector, Version=17.0.1.0, Culture=neutral, PublicKeyToken=162bb880c48a6a98, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.SymfoniaDataCollector\v4.0_17.0.1.0__162bb880c48a6a98\Sage.PL.SymfoniaDataCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Sys.Forms.UI, Version=18.0.1.0, Culture=neutral, PublicKeyToken=3342f0000400c525, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Sys.Forms.UI\v4.0_18.0.1.0__3342f0000400c525\Sage.PL.Sys.Forms.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.TaskExecutor.ApplicationLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.TaskExecutor.ApplicationLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.TaskExecutor.ApplicationLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.TaskExecutor.BusinessLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.TaskExecutor.BusinessLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.TaskExecutor.BusinessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.TaskExecutor.Infrastructure, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.TaskExecutor.Infrastructure\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.TaskExecutor.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.TaskExecutor.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.TaskExecutor.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.TaskExecutor.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.TaskExecutor.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.TaskExecutor.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.TaskExecutor.ViewLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Users.Interfaces, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Users.Interfaces\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Users.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sage.PL.Users.ViewLayer, Version=19.0.1.0, Culture=neutral, PublicKeyToken=12f078cdb3d7210e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Sage.PL.Users.ViewLayer\v4.0_19.0.1.0__12f078cdb3d7210e\Sage.PL.Users.ViewLayer.dll</HintPath>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.3.0\lib\net46\Serilog.dll</HintPath>
@@ -393,10 +961,10 @@
     <Compile Include="Controllers\ConfigurationTestApiController.cs" />
     <Compile Include="Controllers\VacationBalanceApiController.cs" />
     <Compile Include="Controllers\VacationRequestsApiController.cs" />
-    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeAttributeMapping.cs" />
-    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeMapping.cs" />
-    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeAttributeMappingSection.cs" />
-    <Compile Include="ImportableVacationTypesConfiguration\VacationTypeImportConfiguration.cs" />
+    <Compile Include="IntegratedVacationTypesConfiguration\VacationTypeAttributeMapping.cs" />
+    <Compile Include="IntegratedVacationTypesConfiguration\VacationTypeMapping.cs" />
+    <Compile Include="IntegratedVacationTypesConfiguration\VacationTypeAttributeMappingSection.cs" />
+    <Compile Include="IntegratedVacationTypesConfiguration\VacationTypeImportConfiguration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -406,13 +974,6 @@
     <Compile Include="Logic\SageServiceUtils.cs" />
     <Compile Include="Logic\SyncVacationDataLogic.cs" />
     <Compile Include="Logic\VacationWebhookLogic.cs" />
-    <Compile Include="Models\EmploWebhookModels\RequestModels\OperationTypeEnum.cs" />
-    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationCreatedWebhookModel.cs" />
-    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationEditedWebhookModel.cs" />
-    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationStatusChangedWebhookModel.cs" />
-    <Compile Include="Models\EmploWebhookModels\RequestModels\VacationStatusEnum.cs" />
-    <Compile Include="Models\EmploWebhookModels\ResponseModels\CreatedObjectResponseEmploModel.cs" />
-    <Compile Include="Models\EmploWebhookModels\ResponseModels\ErrorMessageResponseEmploModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

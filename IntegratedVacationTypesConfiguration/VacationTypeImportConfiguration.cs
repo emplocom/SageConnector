@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.WebPages;
 using EmploApiSDK.Logger;
 
-namespace SageConnector.ImportableVacationTypesConfiguration
+namespace SageConnector.IntegratedVacationTypesConfiguration
 {
     public class VacationTypeImportConfiguration
     {
