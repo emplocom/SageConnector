@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -970,9 +971,9 @@
     </Compile>
     <Compile Include="Logic\ConfigurationTestLogic.cs" />
     <Compile Include="Logic\EnumerableUtils.cs" />
-    <Compile Include="Logic\SageIdentifierUtils.cs" />
-    <Compile Include="Logic\SageServiceUtils.cs" />
+    <Compile Include="Logic\SageServiceClient.cs" />
     <Compile Include="Logic\SyncVacationDataLogic.cs" />
+    <Compile Include="Logic\VacationValidationLogic.cs" />
     <Compile Include="Logic\VacationWebhookLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

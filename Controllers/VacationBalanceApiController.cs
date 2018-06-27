@@ -11,11 +11,12 @@ namespace SageConnector.Controllers
     public class VacationBalanceApiController : ApiController
     {
         SyncVacationDataLogic _sageSyncVacationDataLogic;
+       ILogger _logger;
 
         public VacationBalanceApiController()
         {
-            ILogger logger = LoggerFactory.CreateLogger(null);
-            _sageSyncVacationDataLogic = new SyncVacationDataLogic(logger);
+            _logger = LoggerFactory.CreateLogger(null);
+            _sageSyncVacationDataLogic = new SyncVacationDataLogic(_logger);
         }
 
         /// <summary>
@@ -26,6 +27,8 @@ namespace SageConnector.Controllers
         [HttpGet]
         public HttpResponseMessage SynchronizeVacationDays([FromUri] string listOfIds = "")
         {
+            //SageServiceClient.EnsureConnectionOpen(_logger);
+
             if (listOfIds.IsEmpty())
             {
                 _sageSyncVacationDataLogic.SyncVacationData();

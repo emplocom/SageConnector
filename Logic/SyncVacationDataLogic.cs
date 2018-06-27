@@ -8,7 +8,6 @@ using EmploApiSDK.ApiModels.Vacations.IntegratedVacationBalances;
 using EmploApiSDK.Client;
 using EmploApiSDK.Logger;
 using Forte.Common.Interfaces;
-using Forte.Kadry.KDFAppCOMServer;
 using Forte.Kadry.KDFAppServices;
 using Newtonsoft.Json;
 using SageConnector.IntegratedVacationTypesConfiguration;
@@ -94,33 +93,33 @@ namespace SageConnector.Logic
                 foreach (var vacationTypeMapping in _vacationTypeImportConfiguration.VacationTypeMappings)
                 {
                     var vacationTypeBalance = employeeBalancesCollection.Value.FirstOrDefault(b =>
-                        b.Type.Identifier.GetExternalIdForEmplo().Equals(vacationTypeMapping.VacationType));
+                        b.Type.Identifier.IntId.ToString().Equals(vacationTypeMapping.VacationType));
 
                     if (vacationTypeBalance == null)
                     {
                         _logger.WriteLine(
-                            $"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find vacationTypeBalance for mapping {vacationTypeMapping.VacationType}, skipping synchronization for this type",
+                            $"Employee {employeeBalancesCollection.Key.Identifier.IntId.ToString()}: Could not find vacationTypeBalance for mapping {vacationTypeMapping.VacationType}, skipping synchronization for this type",
                             LogLevelEnum.Error);
                         continue;
                     }
 
                     var vacationBalanceDto = new IntegratedVacationsBalanceDto();
                     vacationBalanceDto.ExternalEmployeeId =
-                        vacationTypeBalance.Employee.Identifier.GetExternalIdForEmplo();
+                        vacationTypeBalance.Employee.Identifier.IntId.ToString();
                     vacationBalanceDto.ExternalVacationTypeId =
-                        vacationTypeBalance.Type.Identifier.GetExternalIdForEmplo();
+                        vacationTypeBalance.Type.Identifier.IntId.ToString();
                     vacationBalanceDto.AvailableDays = Convert.ToDecimal(vacationTypeBalance.CurrentSize);
                     vacationBalanceDto.OutstandingDays = Convert.ToDecimal(vacationTypeBalance.BehindDimension);
 
                     if (!vacationTypeMapping.OnDemandType.IsEmpty())
                     {
                         var onDemandTypeBalance = employeeBalancesCollection.Value.FirstOrDefault(b =>
-                            b.Type.Identifier.GetExternalIdForEmplo().Equals(vacationTypeMapping.OnDemandType));
+                            b.Type.Identifier.IntId.ToString().Equals(vacationTypeMapping.OnDemandType));
 
                         if (onDemandTypeBalance == null)
                         {
                             _logger.WriteLine(
-                                $"Employee {employeeBalancesCollection.Key.Identifier.GetExternalIdForEmplo()}: Could not find onDemandTypeBalance for mapping {vacationTypeMapping.OnDemandType}, skipping synchronization for it and it's base type ({vacationTypeMapping.VacationType})",
+                                $"Employee {employeeBalancesCollection.Key.Identifier.IntId.ToString()}: Could not find onDemandTypeBalance for mapping {vacationTypeMapping.OnDemandType}, skipping synchronization for it and it's base type ({vacationTypeMapping.VacationType})",
                                 LogLevelEnum.Error);
                             continue;
                         }

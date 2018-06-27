@@ -4,7 +4,9 @@ using System.Linq;
 using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.RequestModels;
 using EmploApiSDK.Logger;
 using Forte.Common.Interfaces;
+using Forte.Kadry.KDFAppCOMServer;
 using Forte.Kadry.KDFAppServices;
+using mxKD;
 using Symfonia.Common.Defs;
 
 namespace SageConnector.Logic
@@ -40,7 +42,7 @@ namespace SageConnector.Logic
 
 
             IEventType eventType = eventTypes.FirstOrDefault(et => et.HasBalance &&
-                                                                   et.BalanceType.Identifier.GetExternalIdForEmplo()
+                                                                   et.BalanceType.Identifier.IntId.ToString()
                                                                        .Equals(emploRequest.ExternalVacationTypeId));
             if (eventType == null)
                 throw new Exception(
@@ -59,17 +61,54 @@ namespace SageConnector.Logic
                 insertAbsenceResult.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
             if (!insertAbsenceResult.Success) return insertAbsenceResult;
 
-            newAbsenceIdentifier = createdAbsence.Identifier.GetExternalIdForEmplo();
+            newAbsenceIdentifier = createdAbsence.Identifier.IntId.ToString();
 
             if (emploRequest.HasManagedVacationDaysBalance)
-                _syncVacationDataLogic.SyncVacationData(new List<string> {employee.Identifier.GetExternalIdForEmplo()});
+                _syncVacationDataLogic.SyncVacationData(new List<string> {employee.Identifier.IntId.ToString()});
 
             return insertAbsenceResult;
         }
 
         public IResult SendVacationEditedRequest(VacationEditedWebhookModel emploRequest)
         {
-            throw new NotImplementedException();
+            using (var scope = new KDFAppCOMObjectScope())
+            {
+                MxKdPracownicy pracownicy = scope.KDFirm.Pracownicy;
+                pracownicy.UstawWarunki($"IdPracownika={emploRequest.ExternalEmployeeId}");
+
+                if (pracownicy.LiczbaPracownikow < 1)
+                {
+                    throw new Exception($"Nie znaleziono pracownika o Id {emploRequest.ExternalEmployeeId}");
+                }
+
+                MxKdPracownik pracownik = pracownicy.Pracownik[0];
+
+                var zdarzenia = pracownik.Zdarzenia;
+                zdarzenia.UstawWarunki($"IdZdarzenia={emploRequest.ExternalVacationId}");
+
+                if (zdarzenia.LiczbaZdarzen < 1)
+                {
+                    throw new Exception($"Nie znaleziono zdarzenia urlopowego o Id {emploRequest.ExternalVacationId}");
+                }
+
+                MxKdZdarzenie zdarzenieUrlopowe = zdarzenia.Zdarzenie[0];
+
+                if (zdarzenieUrlopowe.DataOd.Date != emploRequest.Since.Date ||
+                    zdarzenieUrlopowe.DataDo.Date != emploRequest.Until.Date)
+                {
+                    zdarzenieUrlopowe.CzasOd = emploRequest.Since.Date;
+                    zdarzenieUrlopowe.CzasDo = emploRequest.Until.Date;
+                }
+
+                if (zdarzenieUrlopowe.GodzinaOd.TimeOfDay != emploRequest.Since.TimeOfDay ||
+                    zdarzenieUrlopowe.GodzinaDo.TimeOfDay != emploRequest.Until.TimeOfDay)
+                {
+                    zdarzenieUrlopowe.SetCzas(emploRequest.Since.Date, emploRequest.Since, emploRequest.Until,
+                        MxKdGodziny.MxKdZAktualnegoDnia);
+                }
+            }
+
+            return new CResult(String.Empty);
         }
 
         public IResult SendVacationStatusChangedRequest(VacationStatusChangedWebhookModel emploRequest)
@@ -103,7 +142,7 @@ namespace SageConnector.Logic
             if (emploRequest.HasManagedVacationDaysBalance)
                 _syncVacationDataLogic.SyncVacationData(new List<string>
                 {
-                    inputAbsence.Employee.Identifier.GetExternalIdForEmplo()
+                    inputAbsence.Employee.Identifier.IntId.ToString()
                 });
 
             return changeAbsenceStateResult;

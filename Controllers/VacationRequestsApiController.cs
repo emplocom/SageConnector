@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using EmploApiSDK.ApiModels.Vacations.IntegratedVacationValidation;
 using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.RequestModels;
 using EmploApiSDK.ApiModels.Vacations.IntegratedVacationWebhooks.ResponseModels;
 using EmploApiSDK.Logger;
@@ -19,14 +20,16 @@ namespace SageConnector.Controllers
     {
         VacationWebhookLogic _vacationWebhookLogic;
         SyncVacationDataLogic _syncVacationDataLogic;
+        VacationValidationLogic _vacationValidationLogic;
         ILogger _logger;
 
         public VacationRequestsApiController()
         {
             _logger = LoggerFactory.CreateLogger(null);
-
+            
             _syncVacationDataLogic = new SyncVacationDataLogic(_logger);
             _vacationWebhookLogic = new VacationWebhookLogic(_logger, _syncVacationDataLogic);
+            _vacationValidationLogic = new VacationValidationLogic(_logger);
             
         }
 
@@ -126,6 +129,34 @@ namespace SageConnector.Controllers
                 }
 
                 _logger.WriteLine($"Webhook VacationStatusChanged response: {JsonConvert.SerializeObject(response)}", result.Success ? LogLevelEnum.Information : LogLevelEnum.Error);
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(BuildErrorResponseFromException(e));
+            }
+        }
+
+        /// <summary>
+        /// Endpoint listening for vacation validation request from emplo
+        /// </summary>
+        [HttpPost]
+        public HttpResponseMessage ValidateVacationRequest([FromBody] VacationValidationRequestModel model)
+        {
+            _logger.WriteLine($"Request received: ValidateVacationRequest, {JsonConvert.SerializeObject(model)}");
+
+            try
+            {
+                var validationResult = _vacationValidationLogic.ValidateVacationRequest(model);
+
+                var response = new HttpResponseMessage(HttpStatusCode.Created)
+                {
+                    Content = new StringContent(
+                        JsonConvert.SerializeObject(validationResult),
+                        Encoding.UTF8, "application/json")
+                };
+
+                _logger.WriteLine($"Vacation request validation response: {JsonConvert.SerializeObject(response)}");
                 return response;
             }
             catch (Exception e)

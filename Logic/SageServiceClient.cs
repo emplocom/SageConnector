@@ -1,61 +1,43 @@
 ﻿using System;
 using System.Configuration;
 using EmploApiSDK.Logger;
+using Forte.Kadry.KDFAppCOMServer;
 using Forte.Kadry.KDFAppServices;
 using Symfonia.Common.Application;
 using Symfonia.Common.Defs;
 
 namespace SageConnector.Logic
 {
-    public class SageServiceUtils
+    public class SageServiceClient
     {
-        private ILogger _logger;
-
-        public SageServiceUtils(ILogger logger)
+        public static void EnsureConnectionOpen(ILogger logger)
         {
-            _logger = logger;
+            EnterInstance(logger);
+            OpenFirmAndLogOnUser(logger);
+            //FKDFAppCOMServer.MaxInstancesCount = Environment.ProcessorCount;
         }
 
-        public void EnterInstance()
+        private static void EnterInstance(ILogger logger)
         {
             CResult res = CResult.New("EnterInstance");
 
             try
             {
-                SCTUtility.Verify(FKDFAppServices.EnterInstance("MZZ Nieobecności", "Absence", "Absence_V1", true, true));
+                SCTUtility.Verify(FKDFAppServices.EnterInstance("Nieobecności", "Absence", "Absence_V1", true, true));
                 FTemporaryOnlineLicencing.Settings.Online = bool.Parse(ConfigurationManager.AppSettings["TemporaryOnlineLicencing"]);
             }
             catch (Exception ex)
             {
                 res.Add(ex);
-                _logger.WriteLine(res.ToString(), LogLevelEnum.Error);
+                logger.WriteLine(res.ToString(), LogLevelEnum.Error);
             }
             finally
             {
-                _logger.WriteLine(res.ToString());
+                logger.WriteLine(res.ToString());
             }
         }
 
-        public void ExitInstance()
-        {
-            CResult res = CResult.New("ExitInstance");
-
-            try
-            {
-                SCTUtility.Verify(FKDFAppServices.ExitInstance());
-            }
-            catch (Exception ex)
-            {
-                res.Add(ex);
-                _logger.WriteLine(res.ToString(), LogLevelEnum.Error);
-            }
-            finally
-            {
-                _logger.WriteLine(res.ToString());
-            }
-        }
-
-        public IResult OpenFirmAndLogOnUser()
+        private static IResult OpenFirmAndLogOnUser(ILogger logger)
         {
             CResult res = CResult.New("OpenFirmAndLogOnUser");
 
@@ -68,17 +50,17 @@ namespace SageConnector.Logic
                 ConfigurationManager.AppSettings["AppUserLogin"], ConfigurationManager.AppSettings["AppUserPassword"],
                 bool.Parse(ConfigurationManager.AppSettings["AppUserIntegrated"]))))
             {
-                _logger.WriteLine(res.ToString(), LogLevelEnum.Error);
+                logger.WriteLine(res.ToString(), LogLevelEnum.Error);
                 return res;
             }
-                
 
-            _logger.WriteLine($"Firma '{ConfigurationManager.AppSettings["DatabaseServer"]}.{ConfigurationManager.AppSettings["DatabaseName"]}' została otwarta.");
+
+            logger.WriteLine($"Firma '{ConfigurationManager.AppSettings["DatabaseServer"]}.{ConfigurationManager.AppSettings["DatabaseName"]}' została otwarta.");
 
             return res;
         }
 
-        public IResult LogOffUserAndCloseFirm()
+        private static IResult LogOffUserAndCloseFirm(ILogger logger)
         {
             CResult res = CResult.New("LogOffUserAndCloseFirm");
 
@@ -87,7 +69,7 @@ namespace SageConnector.Logic
                 if (!res.Check(FKDFAppServices.CloseFirm()))
                     return res;
 
-                _logger.WriteLine("Firma została zamknięta");
+                logger.WriteLine("Firma została zamknięta");
 
             }
             catch (Exception ex)
@@ -95,6 +77,31 @@ namespace SageConnector.Logic
                 res.Add(ex);
             }
             return res;
+        }
+
+        private static void ExitInstance(ILogger logger)
+        {
+            CResult res = CResult.New("ExitInstance");
+
+            try
+            {
+                SCTUtility.Verify(FKDFAppServices.ExitInstance());
+            }
+            catch (Exception ex)
+            {
+                res.Add(ex);
+                logger.WriteLine(res.ToString(), LogLevelEnum.Error);
+            }
+            finally
+            {
+                logger.WriteLine(res.ToString());
+            }
+        }
+
+        public static void CloseConnection(ILogger logger)
+        {
+            LogOffUserAndCloseFirm(logger);
+            ExitInstance(logger);
         }
     }
 }

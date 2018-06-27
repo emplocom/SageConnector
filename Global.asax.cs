@@ -13,7 +13,7 @@ namespace SageConnector
     public class WebApiApplication : System.Web.HttpApplication
     {
         private ILogger _logger;
-        private SageServiceUtils _utils;
+        private SageServiceClient _client;
 
         protected void Application_Start()
         {
@@ -25,10 +25,8 @@ namespace SageConnector
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             _logger = LoggerFactory.CreateLogger(null);
-            _utils = new SageServiceUtils(_logger);
-
-            _utils.EnterInstance();
-            _utils.OpenFirmAndLogOnUser();
+            
+            SageServiceClient.EnsureConnectionOpen(_logger);
         }
 
         private Assembly assemblyResolve(object sender, ResolveEventArgs args)
@@ -57,8 +55,7 @@ namespace SageConnector
 
         protected void Application_End()
         {
-            _utils.LogOffUserAndCloseFirm();
-            _utils.ExitInstance();
+            SageServiceClient.CloseConnection(_logger);
         }
     }
 }

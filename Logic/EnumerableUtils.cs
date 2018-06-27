@@ -20,5 +20,16 @@ namespace SageConnector.Logic
         {
             return Task.WhenAll(enumerable.Select(action));
         }
+
+        public static List<T> AsList<T>(this T t)
+        {
+            return new List<T>() {t};
+        }
+
+        public static IEnumerable<DateTime> EachDayTo(this DateTime from, DateTime thru)
+        {
+            for (var day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
+                yield return day;
+        }
     }
 }

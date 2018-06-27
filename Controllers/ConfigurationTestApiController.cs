@@ -11,20 +11,22 @@ namespace SageConnector.Controllers
     public class ConfigurationTestApiController : ApiController
     {
         private ConfigurationTestLogic _configurationTestLogic;
+        private ILogger _logger;
 
         public ConfigurationTestApiController()
         {
-            ILogger logger = LoggerFactory.CreateLogger(null);
-            _configurationTestLogic = new ConfigurationTestLogic(logger);
+            _logger = LoggerFactory.CreateLogger(null);
+            _configurationTestLogic = new ConfigurationTestLogic(_logger);
         }
 
         /// <summary>
         /// Enables testing of Connector's configuration by sending test requests to the Sage and emplo APIs.
         /// </summary>
         [HttpGet]
-        public async Task<HttpResponseMessage> TestConnection()
+        public HttpResponseMessage TestConnection()
         {
-            var emploResult = await _configurationTestLogic.TestEmploConnection();
+
+            var emploResult = Task.Run(() => _configurationTestLogic.TestEmploConnection()).GetAwaiter().GetResult();
             var sageResult = _configurationTestLogic.TestSageConnection();
 
             return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent($"Emplo API connection test: {emploResult}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}Sage connection test: {sageResult}") };
